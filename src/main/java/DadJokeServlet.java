@@ -6,21 +6,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "DadJokeServlet", urlPatterns = "/dadjoke")
+public class DadJokeServlet extends HttpServlet {
+
     @Override
-    protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
-        String name = req.getParameter("name");
+        String joke = req.getParameter("joke");
 
-        if(name == null){
-            name = "World";
+        if(joke == null){
+            joke = "Hungry";
         }
 
-        out.println("<h1>Hello, " + name + "!</h1>");
-
-
+        out.println("<h1>Hi " + joke + ", I'm Dad!</h1>");
     }
 }
