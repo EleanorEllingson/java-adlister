@@ -9,24 +9,23 @@ import java.io.PrintWriter;
 @WebServlet(name = "CountServlet", urlPatterns = "/count")
 public class CountServlet extends HttpServlet {
 
+    private int count = 0;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-
-        int hitCount;
-        public void init() {
-            hitCount = 0;
-        }
+        String reset = req.getParameter("reset");
 
         PrintWriter out = resp.getWriter();
-        String title = "Total Number of Hits";
-        int count = 0;
-        for(int i = 1; i > count; i++){
-            count = i;
+
+        if (reset != null){
+
+        count = 0;
 
         }
 
-        out.println("<h1>" + count +"</h1");
+        count += 1;
+
+        out.println("<h1>The count is: " + count +"</h1");
 
 
     }
