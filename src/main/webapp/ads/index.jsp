@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Eleanor
-  Date: 1/22/21
-  Time: 2:57 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,7 +9,9 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="ads">
+            <p>${ad.id}</p>
             <h2>${ad.title}</h2>
+            <p>${ad.userId}</p>
             <p>${ad.description}</p>
         </div>
     </c:forEach>
