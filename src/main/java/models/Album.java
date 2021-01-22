@@ -3,11 +3,20 @@ package models;
 public class Album {
     private long id;
     private String artist;
+    private String name;
     private int releaseDate;
     private double sales;
-    private char genre;
+    private String genre;
 
     public Album() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {
@@ -42,11 +51,11 @@ public class Album {
         this.sales = sales;
     }
 
-    public char getGenre() {
+    public String getGenre() {
         return genre;
     }
 
-    public void setGenre(char genre) {
+    public void setGenre(String genre) {
         this.genre = genre;
     }
 }
