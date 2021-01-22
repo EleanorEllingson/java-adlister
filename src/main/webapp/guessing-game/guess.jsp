@@ -13,7 +13,7 @@
 <body>
 <form method="post" action="/guess">
     <h1>Guess a number between 1 and 3</h1>
-    <input type="text" name="guessnumber" placeholder="Enter your number">
+    <input type="text" name="number">
     <div>
         <input type="submit">
     </div>

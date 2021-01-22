@@ -10,6 +10,19 @@ import java.io.IOException;
 public class GuessServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("")
+        req.getRequestDispatcher("guessing-game/guess.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int guessedNumber = Integer.parseInt(req.getParameter("number"));
+        int min = 1;
+        int randomNumber = (int) (Math.random() * 3) + min;
+        System.out.println(randomNumber);
+        if(guessedNumber == randomNumber){
+            resp.sendRedirect("/correct");
+        }else {
+            resp.sendRedirect("/incorrect");
+        }
     }
 }
